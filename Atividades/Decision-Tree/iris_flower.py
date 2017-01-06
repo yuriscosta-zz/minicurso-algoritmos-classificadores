@@ -10,7 +10,7 @@ iris = load_iris()
 test_idx = [0, 50, 100]
 
 # traing data
-train_target = np.delete(iris.target, test_idx) 
+train_target = np.delete(iris.target, test_idx)
 train_data = np.delete(iris.data, test_idx, axis=0)
 
 # testing data
@@ -25,15 +25,15 @@ print clf.predict(test_data)
 
 # viz code
 from sklearn.externals.six import StringIO
-import pydot
+import pydotplus
 
 dot_data = StringIO()
 tree.export_graphviz(clf,
 			out_file = dot_data,
-			feature_names = iris.feature_names, 
+			feature_names = iris.feature_names,
  			class_names = iris.target_names,
 			filled = True, rounded = True,
 			impurity = False)
 
-graph = pydot.graph_from_dot_data(dot_data.getvalue())
+graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
 graph.write_pdf("iris.pdf")
