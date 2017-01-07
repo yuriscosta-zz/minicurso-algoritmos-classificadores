@@ -29,17 +29,15 @@ classificador.fit(train_data, train_target)
 
 print classificador.predict(test_data)
 
-# viz code
-from sklearn.externals.six import StringIO
-import pydot
+# gerar pdf
+import pydotplus
 
-dot_data = StringIO()
-tree.export_graphviz(classificador,
-			out_file = dot_data,
+dot_data = tree.export_graphviz(classificador,
+			out_file = None,
 			feature_names = iris.feature_names,
  			class_names = iris.target_names,
 			filled = True, rounded = True,
 			impurity = False)
 
-graph = pydot.graph_from_dot_data(dot_data.getvalue())
+graph = pydotplus.graph_from_dot_data(dot_data)
 graph.write_pdf("iris.pdf")
