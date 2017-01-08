@@ -29,7 +29,7 @@ classificador.fit(train_data, train_target)
 
 print classificador.predict(test_data)
 
-# gerar pdf
+# gerar pdf da árvore
 import pydotplus
 
 dot_data = tree.export_graphviz(classificador,
