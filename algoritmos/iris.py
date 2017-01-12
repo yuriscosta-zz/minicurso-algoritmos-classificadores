@@ -4,14 +4,6 @@ from sklearn.datasets import load_iris
 from sklearn import tree
 
 iris = load_iris()
-# print iris.feature_names
-# print iris.target_names
-# print iris.data[0]
-# print iris.target[0]
-
-# for i in range(len(iris.target)):
-#    print ("Exemplo: " + str(i) + "\nCaracterísticas: " + str(iris.data[i]) +
-#    "\nRótulo: " + str(iris.target[i]) + "\n")
 
 test_index = [0, 50, 100]
 
@@ -23,9 +15,9 @@ train_data = np.delete(iris.data, test_index, axis=0)
 test_target = iris.target[test_index]
 test_data = iris.data[test_index]
 
-# classificador
-classificador = tree.DecisionTreeClassifier()
-classificador.fit(train_data, train_target)
+# classficador
+classificador =  tree.DecisionTreeClassifier()
+classificador = classificador.fit(train_data, train_target)
 
 print classificador.predict(test_data)
 

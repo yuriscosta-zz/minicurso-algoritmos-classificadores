@@ -28,4 +28,4 @@ predicoes = classificador.predict(X_test)
 # calcular a precisaoS
 from sklearn.metrics import accuracy_score
 # print ("Precisão usando árvore de decisão: %f" %(accuracy_score(Y_test, predicoes)))
-# print ("Precisão usando KNN: %f" %(accuracy_score(Y_test, predicoes)))
+print ("Precisão usando KNN: %f" %(accuracy_score(Y_test, predicoes)))
